@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- Bootstrap Js -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- My JS -->
+    <script src="main.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/996973c893.js"></script>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&family=Roboto+Slab:wght@200;400;600;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Sudoku Game</title>
+    </head>
+    <header>
+        <div class="row">
+            <div class="col-12" style="padding-top: 1vw; text-align: center;">
+                <h1 class="d-inline" style="font-size: 6vw;">Sudoku</h1>
+                <div class="float-right" style="position:relative; right:2vw; top:1vw; align-content:center;">
+                    <i class="fas fa-adjust" style="font-size: 2.6vw;"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-6" id="difficulty">
+              <div class="row">
+                <div class="col-4" style="text-align: right;">
+                  <h3 style="font-size: 2.6vw;">difficulty: </h3>
+                </div>
+                <div class="col-8" style="text-align: left; font-size: 1.6vw;">
+                  <select name="difficulty" id="difficulty">
+                    <option value="easy" id="diff1">Easy</option>
+                    <option value="medium" id="diff2" selected>Medium</option>
+                    <option value="hard" id="diff3">Hard</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6" id="time">
+              <div class="row">
+                <div class="col-4" style="text-align: right;">
+                  <h3 style="font-size: 2.6vw;">time: </h3>
+                </div>
+                <div class="col-8" style="text-align: left; font-size: 1.6vw;">
+                  <select name="time" id="time">
+                    <option value="three" id="time1">3 minutes</option>
+                    <option value="five" id="time2" selected>5 minutes</option>
+                    <option value="seven" id="time3">7 minutes</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="row" style="justify-content: center;">
+          <button id="start-button" style="font-size: 1.8vw;">Start Game</button>
+        </div>
+        
+        
+        
+    </header>
+    <body>
+      <!-- My JS -->
+    <script src="main.js"></script>
+
+      <div class="timer">
+        <p id="timer"></p>
+      </div>
+
+      <div id="win_loss" class="hidden">
+        <p id="win_loss_status"></p>
+      </div>
+
+      <div id="game">
+        <div id="board"></div>
+        <div id="number-container">
+          <p id="1">1</p>
+          <p id="2">2</p>
+          <p id="3">3</p>
+          <p id="4">4</p>
+          <p id="5">5</p>
+          <p id="6">6</p>
+          <p id="7">7</p>
+          <p id="8">8</p>
+          <p id="9">9</p>
+        </div>
+      </div>
+
+      <!-- My JS -->
+    <script src="main.js"></script>
+    </body>
+</html>

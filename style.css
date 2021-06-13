@@ -1,0 +1,99 @@
+body {
+    background: #ffffff;
+    font-family: "Baloo Tamma 2", cursive;
+  }
+
+header {
+    background: #a7ffae;
+}
+
+body.dark {
+  background-color: #141212;
+  color: white;
+}
+
+p#timer {
+  font-size: 3vw;
+  text-align: center;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.win_loss {
+  text-align: center;
+  font-size: 3vw;
+}
+
+.red {
+  color: red;
+}
+
+
+#game {
+  display: flex;
+  justify-content: center;
+}
+
+#number-container {
+  margin-top: 5vw;
+}
+
+#number-container > * {
+  border: 2px solid black;
+  border-radius: 30%;
+  width: 30px;
+  height: 30px;
+  font-size: 20pt;
+  margin-left: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+#board {
+  padding-top: 2vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: flex-start;
+  width: 72vh;
+  height: 72vh;
+}
+
+.tile {
+  border: 0.1vh solid black;
+  width: 8vh;
+  height: 8vh;
+  text-align: center;
+  margin: 0px;
+  vertical-align: middle;
+  font-size: 6vh;
+}
+
+p.selected {
+  background-color: lightblue;
+}
+
+
+p.incorrect {
+  color: red;
+}
+
+.rightBorder {
+  border-right: 0.5vh solid black;
+}
+
+.bottomBorder {
+  border-bottom: 0.5vh solid black;
+}
+
+.leftBorder {
+  border-left: 0.5vh solid black;
+}
+
+.topBorder {
+  border-top: 0.5vh solid black;
+}
