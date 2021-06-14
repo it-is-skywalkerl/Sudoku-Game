@@ -35,9 +35,9 @@
     <header id="header">
         <div class="row">
             <div class="col-12" style="padding-top: 1vw; text-align: center;">
-                <h1 class="d-inline" style="font-size: 6vw;">Sudoku</h1>
+                <h1 class="d-inline" id="sudoku-heading">Sudoku</h1>
                 <div class="float-right" style="position:relative; right:2vw; top:1vw; align-content:center;">
-                    <a href="#" id="theme-toggle" class="text-dark"><i class="fas fa-adjust" style="font-size: 2.6vw;"></i></a>
+                    <a href="#" id="theme-toggle" class="text-dark"><i class="fas fa-adjust"></i></a>
                 </div>
             </div>
         </div>
@@ -45,10 +45,10 @@
         <div class="row">
             <div class="col-6" id="difficulty">
               <div class="row">
-                <div class="col-4" style="text-align: right;">
-                  <h3 style="font-size: 2.6vw;">difficulty: </h3>
+                <div class="col-6">
+                  <h3 id="difficulty-colon">difficulty: </h3>
                 </div>
-                <div class="col-8" style="text-align: left; font-size: 1.6vw;">
+                <div class="col-6" id="diff-dropdown">
                   <select name="difficulty" id="difficulty">
                     <option value="easy" id="diff1">Easy</option>
                     <option value="medium" id="diff2" selected>Medium</option>
@@ -60,10 +60,10 @@
 
             <div class="col-6" id="time">
               <div class="row">
-                <div class="col-4" style="text-align: right;">
-                  <h3 style="font-size: 2.6vw;">time: </h3>
+                <div class="col-6">
+                  <h3 id="time-colon">time: </h3>
                 </div>
-                <div class="col-8" style="text-align: left; font-size: 1.6vw;">
+                <div class="col-6" id="time-dropdown">
                   <select name="time" id="time">
                     <option value="three" id="time1">5 minutes</option>
                     <option value="five" id="time2" selected>7 minutes</option>
@@ -75,12 +75,10 @@
         </div>
 
         <div class="row" style="justify-content: center;">
-          <button id="start-button" style="font-size: 1.8vw;">Start Game</button>
-        </div>
-        
-        
-        
+          <button id="start-button">Start Game</button>
+        </div>  
     </header>
+
     <body id="body">
       <!-- My JS -->
     <script src="main.js"></script>
@@ -90,7 +88,7 @@
       </div>
 
       <div id="win_loss" class="hidden">
-        <p id="win_loss_status" style="text-align: center; justify-content: center; font-size: 3vw;"></p>
+        <p id="win_loss_status" style="text-align: center; justify-content: center;"></p>
       </div>
 
       <!-- Game division containing the Sudoku board and number containers -->
