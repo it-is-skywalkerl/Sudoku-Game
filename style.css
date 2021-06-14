@@ -82,6 +82,10 @@ p.incorrect {
   color: red;
 }
 
+p.mightbecorrect {
+  color: blue;
+}
+
 .rightBorder {
   border-right: 0.5vh solid black;
 }

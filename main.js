@@ -1,16 +1,90 @@
-// Loading boards
-const easy = [
-    "6------7------5-2------1---362----81--96-----71--9-4-5-2---651---78----345-------",
-    "685329174971485326234761859362574981549618732718293465823946517197852643456137298"
-];
-const medium = [
-    "--9-------4----6-758-31----15--4-36-------4-8----9-------75----3-------1--2--3---",
-    "619472583243985617587316924158247369926531478734698152891754236365829741472163895"
-];
-const hard = [
-    "-1-5-------97-42----5----7-5---3---7-6--2-41---8--5---1-4------2-3-----9-7----8--",
-    "712583694639714258845269173521436987367928415498175326184697532253841769976352841"
-];
+// Making random board whenever called(needed)
+function makeRandomBoard(difficulty_level) {
+    final_board = "685329174971485326234761859362574981549618732718293465823946517197852643456137298";
+
+    // Swapping appropriate pairs of rows randomly
+    var row1_to_be_swapped = Math.floor(Math.random() * 3);
+    var row2_to_be_swapped = Math.floor(Math.random() * 3);
+    swapRows(row1_to_be_swapped, row2_to_be_swapped);
+    row1_to_be_swapped = Math.floor(Math.random() * 3) + 3;
+    row2_to_be_swapped = Math.floor(Math.random() * 3) + 3;
+    swapRows(row1_to_be_swapped, row2_to_be_swapped);
+    row1_to_be_swapped = Math.floor(Math.random() * 3) + 6;
+    row2_to_be_swapped = Math.floor(Math.random() * 3) + 6;
+    swapRows(row1_to_be_swapped, row2_to_be_swapped);
+
+    // Swapping appropriate pairs of columns randomly
+    var col1_to_be_swapped = Math.floor(Math.random() * 3);
+    var col2_to_be_swapped = Math.floor(Math.random() * 3);
+    swapCols(col1_to_be_swapped, col2_to_be_swapped);
+    col1_to_be_swapped = Math.floor(Math.random() * 3) + 3;
+    col2_to_be_swapped = Math.floor(Math.random() * 3) + 3;
+    swapCols(col1_to_be_swapped, col2_to_be_swapped);
+    col1_to_be_swapped = Math.floor(Math.random() * 3) + 6;
+    col2_to_be_swapped = Math.floor(Math.random() * 3) + 6;
+    swapCols(col1_to_be_swapped, col2_to_be_swapped);
+
+    // Deleting some numbers based on difficulty
+    if(difficulty_level == 1) {
+        for(let i = 0; i < 81; i++) {
+            if(Math.random()>0.5) {
+                final_board = final_board.substring(0, i) + "-" + final_board.substring(i+1, 81);
+            }
+        }
+    }
+    else if(difficulty_level == 2) {
+        for(let i = 0; i < 81; i++) {
+            if(Math.random()>0.42) {
+                final_board = final_board.substring(0, i) + "-" + final_board.substring(i+1, 81);
+            }
+        }
+    }
+    else {
+        for(let i = 0; i < 81; i++) {
+            if(Math.random()>0.35) {
+                final_board = final_board.substring(0, i) + "-" + final_board.substring(i+1, 81);
+            }
+        }
+    }
+
+}
+
+function swapRows(row1, row2) {
+    let tmp_row1 = final_board.substring(row1 * 9, (row1 * 9) + 9);
+    let tmp_row2 = final_board.substring(row2 * 9, (row2 * 9) + 9);
+    if(row1 < row2) {
+        final_board = final_board.substring(0, row1 * 9) + tmp_row2 + final_board.substring((row1 * 9) + 9, row2 * 9) + tmp_row1 + final_board.substring((row2 * 9) + 9, 81);
+    }
+    else if(row2 < row1) {
+        final_board = final_board.substring(0, row2 * 9) + tmp_row1 + final_board.substring((row2 * 9) + 9, row1 * 9) + tmp_row2 + final_board.substring((row1 * 9) + 9, 81);
+    }
+}
+
+function swapCols(col1, col2) {
+    // col1 to be smaller than col2 if not already
+    if(col1 > col2) {
+        col1 = col1 + col2;
+        col2 = col1 - col2;
+        col1 = col1 - col2;
+    }
+
+    let tmp_col1 = "";
+    let tmp_col2 = "";
+    for(let i = col1; i < 81; i = i + 9) {
+        tmp_col1 = tmp_col1 + final_board.substring(i, i+1);
+    }
+    for(let i = col2; i < 81; i = i + 9) {
+        tmp_col2 = tmp_col2 + final_board.substring(i, i+1);
+    }
+
+    for(let i = col1; i < 81; i = i + 9) {
+        final_board = final_board.substring(0, i) + tmp_col2.substring(Math.floor(i/9), Math.floor(i/9) + 1) + final_board.substring(i + 1, 81);
+    }
+    for(let i = col2; i < 81; i = i + 9) {
+        final_board = final_board.substring(0, i) + tmp_col1.substring(Math.floor(i/9), Math.floor(i/9) + 1) + final_board.substring(i + 1, 81);
+    }
+}
+
 
 // Creating variables
 var timer;
@@ -46,9 +120,19 @@ window.onload = function() {
 function startGame() {
     //Choosing by board difficulty
     let board;
-    if (id("diff1").selected) board = easy[0];
-    else if (id("diff2").selected) board = medium[0];
-    else board = hard[0];
+    
+    if (id("diff1").selected) {
+        makeRandomBoard(1);
+        board = final_board;
+    }
+    else if (id("diff2").selected) {
+        makeRandomBoard(2);
+        board = final_board;
+    }
+    else {
+        makeRandomBoard(3);
+        board = final_board;
+    }
     disableSelect = false
 
     //Generating Board
@@ -61,9 +145,9 @@ function startGame() {
 
 function startTimer() {
     // Set remaining time
-    if(id("time1").selected) time_remaining = 180;
-    else if(id("time2").selected) time_remaining = 300;
-    else time_remaining = 420
+    if(id("time1").selected) time_remaining = 300;
+    else if(id("time2").selected) time_remaining = 420;
+    else time_remaining = 600
     id("timer").classList.remove("red");
 
     id("timer").textContent = timeConversion(time_remaining);
@@ -175,10 +259,12 @@ function updateMove() {
 
         if(checkIfValidPosition(selected_tile)) {
             selected_tile.classList.remove("incorrect");
+            selected_tile.classList.add("mightbecorrect");
             selected_tile.classList.remove("selected");
             selected_tile = null;
         }
         else {
+            selected_tile.classList.remove("mightbecorrect");
             selected_tile.classList.add("incorrect");
         }
 
@@ -211,13 +297,6 @@ function checkIfValidPosition(tile) {
             return false;
         }
     }
-    // for(let i = tile.id+9; ; i=i+9) {
-    //     if(i>80) break;
-    //     if(tile.textContent == tiles[i].textContent) {
-    //         return false;
-    //     }
-    //     if(Math.floor(i/9) == 8) break;
-    // }
 
     let big_row;
     let big_col;
