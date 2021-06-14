@@ -32,12 +32,12 @@
 
     <title>Sudoku Game</title>
     </head>
-    <header>
+    <header id="header">
         <div class="row">
             <div class="col-12" style="padding-top: 1vw; text-align: center;">
                 <h1 class="d-inline" style="font-size: 6vw;">Sudoku</h1>
                 <div class="float-right" style="position:relative; right:2vw; top:1vw; align-content:center;">
-                    <i class="fas fa-adjust" style="font-size: 2.6vw;"></i>
+                    <a href="#" id="theme-toggle" class="text-dark"><i class="fas fa-adjust" style="font-size: 2.6vw;"></i></a>
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@
         
         
     </header>
-    <body>
+    <body id="body">
       <!-- My JS -->
     <script src="main.js"></script>
 
@@ -93,6 +93,7 @@
         <p id="win_loss_status" style="text-align: center; justify-content: center; font-size: 3vw;"></p>
       </div>
 
+      <!-- Game division containing the Sudoku board and number containers -->
       <div id="game">
         <div id="board"></div>
         <div id="number-container">

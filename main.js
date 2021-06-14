@@ -49,6 +49,7 @@ function makeRandomBoard(difficulty_level) {
 
 }
 
+// Function to swap 2 rows
 function swapRows(row1, row2) {
     let tmp_row1 = final_board.substring(row1 * 9, (row1 * 9) + 9);
     let tmp_row2 = final_board.substring(row2 * 9, (row2 * 9) + 9);
@@ -60,6 +61,7 @@ function swapRows(row1, row2) {
     }
 }
 
+// Function to swap 2 columns
 function swapCols(col1, col2) {
     // col1 to be smaller than col2 if not already
     if(col1 > col2) {
@@ -96,6 +98,63 @@ var disableSelect;
 window.onload = function() {
     // Run startgame function when start game button is clicked
     id("start-button").addEventListener("click", startGame);
+
+    // Theme toggling(and ofcourse adding event listener to the theme toggle icon)
+    id("theme-toggle").addEventListener("click", function() {
+        if(this.classList.contains("text-dark")) {
+            this.classList.remove("text-dark");
+            this.classList.add("text-white");
+            id("body").classList.add("dark");
+            id("header").classList.add("dark");
+            tiles = qsa(".tile");
+            for(let i = 0; i < tiles.length; i++) {
+                tiles[i].classList.add("tileWhite");
+            }
+            tiles_with_right_border = qsa(".rightBorder");
+            for(let i = 0; i < tiles_with_right_border.length; i++) {
+                tiles_with_right_border[i].classList.add("rightBorderWhite");
+            }
+            tiles_with_left_border = qsa(".leftBorder");
+            for(let i = 0; i < tiles_with_left_border.length; i++) {
+                tiles_with_left_border[i].classList.add("leftBorderWhite");
+            }
+            tiles_with_bottom_border = qsa(".bottomBorder");
+            for(let i = 0; i < tiles_with_bottom_border.length; i++) {
+                tiles_with_bottom_border[i].classList.add("bottomBorderWhite");
+            }
+            tiles_with_top_border = qsa(".topBorder");
+            for(let i = 0; i < tiles_with_top_border.length; i++) {
+                tiles_with_top_border[i].classList.add("topBorderWhite");
+            }
+        }
+        else {
+            this.classList.remove("text-white");
+            this.classList.add("text-dark");
+            id("body").classList.remove("dark");
+            id("header").classList.remove("dark");
+            tiles = qsa(".tileWhite");
+            for(let i = 0; i < tiles.length; i++) {
+                tiles[i].classList.remove("tileWhite");
+            }
+            tiles_with_right_border = qsa(".rightBorderWhite");
+            for(let i = 0; i < tiles_with_right_border.length; i++) {
+                tiles_with_right_border[i].classList.remove("rightBorderWhite");
+            }
+            tiles_with_left_border = qsa(".leftBorderWhite");
+            for(let i = 0; i < tiles_with_left_border.length; i++) {
+                tiles_with_left_border[i].classList.remove("leftBorderWhite");
+            }
+            tiles_with_bottom_border = qsa(".bottomBorderWhite");
+            for(let i = 0; i < tiles_with_bottom_border.length; i++) {
+                tiles_with_bottom_border[i].classList.remove("bottomBorderWhite");
+            }
+            tiles_with_top_border = qsa(".topBorderWhite");
+            for(let i = 0; i < tiles_with_top_border.length; i++) {
+                tiles_with_top_border[i].classList.remove("topBorderWhite");
+            }
+        }
+    })
+
     // Adding event listener to the number containers
     for(let i = 0; i < id("number-container").children.length; i++) {
         id("number-container").children[i].addEventListener("click", function() {
@@ -137,6 +196,29 @@ function startGame() {
 
     //Generating Board
     generateBoard(board);
+    // If the dark theme was active when new game button clicked, then make all borders white because by default it will be black
+    if(id("theme-toggle").classList.contains("text-white")) {
+        tiles = qsa(".tile");
+        for(let i = 0; i < tiles.length; i++) {
+            tiles[i].classList.add("tileWhite");
+        }
+        tiles_with_right_border = qsa(".rightBorder");
+        for(let i = 0; i < tiles_with_right_border.length; i++) {
+            tiles_with_right_border[i].classList.add("rightBorderWhite");
+        }
+        tiles_with_left_border = qsa(".leftBorder");
+        for(let i = 0; i < tiles_with_left_border.length; i++) {
+            tiles_with_left_border[i].classList.add("leftBorderWhite");
+        }
+        tiles_with_bottom_border = qsa(".bottomBorder");
+        for(let i = 0; i < tiles_with_bottom_border.length; i++) {
+            tiles_with_bottom_border[i].classList.add("bottomBorderWhite");
+        }
+        tiles_with_top_border = qsa(".topBorder");
+        for(let i = 0; i < tiles_with_top_border.length; i++) {
+            tiles_with_top_border[i].classList.add("topBorderWhite");
+        }
+    }
 
     // Start timer
     startTimer();
@@ -152,13 +234,16 @@ function startTimer() {
 
     id("timer").textContent = timeConversion(time_remaining);
 
+    // updates every 1000ms (1 second)
     timer = setInterval(function() {
         time_remaining--;
 
+        // Turns time remaining to red as warning to the player that very less time is remaining
         if(time_remaining<=30) {
             id("timer").classList.add("red");
         }
 
+        // Disable selection and end game if time is up
         if(time_remaining==0) {
             disableSelect = true;
             clearTimeout(timer);
@@ -169,6 +254,7 @@ function startTimer() {
     }, 1000)
 }
 
+// Function to convert seconds to minutes and seconds 
 function timeConversion(time) {
     let minutes = Math.floor(time/60);
     let seconds = time%60;
@@ -179,9 +265,10 @@ function timeConversion(time) {
 function generateBoard(board) {
     // Clearing any previous board
     clearPrev();
-    // 
+
     let idCount = 0;
 
+    // Creating all 81 tiles and filling them appropriately
     for(let i=0; i<81 ; i++) {
         let tile = document.createElement("p");
         if(board.charAt(i) != '-') {
@@ -257,6 +344,7 @@ function updateMove() {
     if(selected_tile && selected_num) {
         selected_tile.textContent = selected_num.textContent;
 
+        // Function by which tiles can be assigned incorrect/mightbecorrect classes
         if(checkIfValidPosition(selected_tile)) {
             selected_tile.classList.remove("incorrect");
             selected_tile.classList.add("mightbecorrect");
@@ -268,12 +356,15 @@ function updateMove() {
             selected_tile.classList.add("incorrect");
         }
 
+        // Check if all tiles are filled correctly and end the game if true
         if(allCorrect()) {
+            disableSelect = true;
             endGame();
         }
     }
 }
 
+// Function to check if all tiles are filled and follow all rules of Sudoku
 function allCorrect() {
     let tiles = qsa(".tile");
     for(let tmp = 0; tmp < 81; tmp++) {
@@ -283,21 +374,25 @@ function allCorrect() {
     return true;
 }
 
+// Function to check if the number in tile satisfies all rules of Sudoku
 function checkIfValidPosition(tile) {
     let tiles = qsa(".tile");
 
+    // To check the row in which tile is present
     for(let i = Math.floor(tile.id/9) * 9; i < (Math.floor(tile.id/9) * 9) + 9 ; i++) {
         if(tile.textContent == tiles[i].textContent && i != tile.id) {
             return false;
         }
     }
     
+    // To check the column in which tile is present
     for(let i = tile.id%9; i < 81 ;i=i+9) {
         if(tile.textContent == tiles[i].textContent && i != tile.id) {
             return false;
         }
     }
 
+    // To check the 3*3 block in which tile is present
     let big_row;
     let big_col;
     if(tile.id/9 < 3) big_row = 0;
@@ -319,7 +414,9 @@ function checkIfValidPosition(tile) {
     return true;
 }
 
+// Function to end current game
 function endGame() {
+    // Win/Loss message to be shown
     id("win_loss").classList.remove("hidden");
     if(time_remaining > 0) {
         id("win_loss_status").textContent = "You won :)";
