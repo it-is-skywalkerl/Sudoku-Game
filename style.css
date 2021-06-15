@@ -46,6 +46,19 @@ header.dark {
 
 #start-button {
   font-size: 1.8vw;
+  background-color: #b7faff;
+  border: 0.3vw solid rgb(48, 69, 255);
+  border-radius: 10%;
+}
+
+#start-button:hover {
+  font-size: 2vw;
+  background-color: #f53900;
+  transition: ease 0.8s;
+}
+
+#start-button:active {
+  transform: translateY(1vmin);
 }
 
 p#timer {
@@ -198,6 +211,12 @@ p.mightbecorrect {
 
   #start-button {
     font-size: 3vw;
+  }
+
+  #start-button:hover {
+    font-size: 3.5vw;
+    background-color: #f53900;
+    transition: ease 0.8s;
   }
 
   p#timer {
