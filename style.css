@@ -1,10 +1,10 @@
 body {
-    background: #ffffff;
-    font-family: "Baloo Tamma 2", cursive;
-  }
+  background: #ffffff;
+  font-family: "Baloo Tamma 2", cursive;
+}
 
 header {
-    background: #a7ffae;
+  background: #a7ffae;
 }
 
 body.dark {
@@ -30,7 +30,7 @@ header.dark {
 }
 
 #diff-dropdown {
-  text-align: left; 
+  text-align: left;
   font-size: 1.6vw;
 }
 
@@ -66,9 +66,8 @@ p#timer {
   text-align: center;
 }
 
-.hidden
-{
-    display: none;
+.hidden {
+  display: none;
 }
 
 .win_loss {
@@ -79,7 +78,6 @@ p#timer {
 .red {
   color: red;
 }
-
 
 #game {
   display: flex;
@@ -135,10 +133,9 @@ p#timer {
   font-size: 6vh;
 }
 
-p.selected {
+button.selected {
   background-color: lightblue;
 }
-
 
 p.incorrect {
   color: red;
@@ -233,11 +230,11 @@ p.mightbecorrect {
     display: flex;
     justify-content: center;
   }
-  
+
   #number-container {
     margin-top: 3vh;
   }
-  
+
   #number-container > * {
     border: 0.3vh solid rgb(167, 230, 255);
     border-radius: 30%;
@@ -252,7 +249,7 @@ p.mightbecorrect {
     margin-bottom: 1vh;
     text-align: center;
   }
-  
+
   #board {
     padding-top: 1vh;
     display: flex;
@@ -262,7 +259,7 @@ p.mightbecorrect {
     width: 72.9vw;
     height: 72.9vw;
   }
-  
+
   .tile {
     border: 0.1vh solid black;
     width: 8.1vw;
@@ -272,7 +269,7 @@ p.mightbecorrect {
     vertical-align: middle;
     font-size: 6vw;
   }
-  
+
   .tileWhite {
     border: 0.1vh solid rgb(221, 254, 255);
     width: 8.1vw;
@@ -286,31 +283,31 @@ p.mightbecorrect {
   .rightBorder {
     border-right: 0.5vh solid black;
   }
-  
+
   .bottomBorder {
     border-bottom: 0.5vh solid black;
   }
-  
+
   .leftBorder {
     border-left: 0.5vh solid black;
   }
-  
+
   .topBorder {
     border-top: 0.5vh solid black;
   }
-  
+
   .rightBorderWhite {
     border-right: 0.55vh solid rgb(221, 254, 255);
   }
-  
+
   .bottomBorderWhite {
     border-bottom: 0.55vh solid rgb(221, 254, 255);
   }
-  
+
   .leftBorderWhite {
     border-left: 0.55vh solid rgb(221, 254, 255);
   }
-  
+
   .topBorderWhite {
     border-top: 0.55vh solid rgb(221, 254, 255);
   }
