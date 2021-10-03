@@ -1,5 +1,6 @@
 // Making random board whenever called(needed)
 function makeRandomBoard(difficulty_level) {
+    // This is one valid board
     final_board = "685329174971485326234761859362574981549618732718293465823946517197852643456137298";
 
     // Swapping appropriate pairs of rows randomly
