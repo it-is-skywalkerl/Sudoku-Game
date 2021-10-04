@@ -52,6 +52,7 @@ header.dark {
   background-color: #b7faff;
   border: 0.3vw solid rgb(48, 69, 255);
   border-radius: 10%;
+  transition: ease 0.3s;
 }
 
 #start-button:hover {

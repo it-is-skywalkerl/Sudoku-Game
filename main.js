@@ -76,7 +76,7 @@ function swapCols(col1, col2) {
     for(let i = col1; i < 81; i = i + 9) {
         tmp_col1 = tmp_col1 + final_board.substring(i, i+1);
     }
-    for(let i = col2; i < 81; i = i + 9) {
+    for (let i = col2; i < 81; i = i + 9) {
         tmp_col2 = tmp_col2 + final_board.substring(i, i+1);
     }
 
@@ -102,7 +102,7 @@ window.onload = function() {
 
     // Theme toggling(and ofcourse adding event listener to the theme toggle icon)
     id("theme-toggle").addEventListener("click", function() {
-        if(this.classList.contains("text-dark")) {
+        if(this.classList.contains("text-dark")) { //if current theme is light
             this.classList.remove("text-dark");
             this.classList.add("text-white");
             id("body").classList.add("dark");
@@ -128,7 +128,7 @@ window.onload = function() {
                 tiles_with_top_border[i].classList.add("topBorderWhite");
             }
         }
-        else {
+        else { //if current theme is dark
             this.classList.remove("text-white");
             this.classList.add("text-dark");
             id("body").classList.remove("dark");
@@ -197,7 +197,7 @@ function startGame() {
 
     //Generating Board
     generateBoard(board);
-    // If the dark theme was active when new game button clicked, then make all borders white because by default it will be black
+    // If the dark theme was active when new game button is clicked, then all borders are made white because by default it will be black
     if(id("theme-toggle").classList.contains("text-white")) {
         tiles = qsa(".tile");
         for(let i = 0; i < tiles.length; i++) {
