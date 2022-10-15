@@ -16,3 +16,5 @@ Features:
 -Number filled would be red if it does not follow any rule of Sudoku, i.e, if the number filled by the user is already present in that respective row, column and/or its 3\*3 block<br>
 -Number filled would be blue otherwise (if all conditions are satisfied)<br>
 -Win/loss message shown when the current game is finished<br>
+-Background music<br>
+-Tailwind<br>
