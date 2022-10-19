@@ -1,4 +1,5 @@
 // SUDOKO
+
 // Making random board whenever called(needed)
 function makeRandomBoard(difficulty_level) {
     // This is one valid board
@@ -65,6 +66,7 @@ function swapRows(row1, row2) {
 
 // Function to swap 2 columns
 function swapCols(col1, col2) {
+
     // col1 to be smaller than col2 if not already
     if(col1 > col2) {
         col1 = col1 + col2;
@@ -183,6 +185,7 @@ window.onload = function() {
 }
 
 function startGame() {
+
     //Choosing by board difficulty
     let board;
     
@@ -232,6 +235,7 @@ function startGame() {
 }
 
 function startTimer() {
+
     // Set remaining time
     if(id("time1").selected) time_remaining = 300;
     else if(id("time2").selected) time_remaining = 420;
@@ -269,6 +273,7 @@ function timeConversion(time) {
 }
 
 function generateBoard(board) {
+
     // Clearing any previous board
     clearPrev();
 
@@ -323,6 +328,7 @@ function generateBoard(board) {
 }
 
 function clearPrev() {
+
     // Removing each tile
     let tiles = qsa(".tile");
     for(let i = 0; i < tiles.length; i++)
@@ -422,6 +428,7 @@ function checkIfValidPosition(tile) {
 
 // Function to end current game
 function endGame() {
+
     // Win/Loss message to be shown
     id("win_loss").classList.remove("hidden");
     if(time_remaining > 0) {
