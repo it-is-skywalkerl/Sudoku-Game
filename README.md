@@ -6,7 +6,6 @@ This is a website where you can play SUDOKO.
 
 <br>
 Features:
-
 -Dark Mode available<br>
 -3 choices of difficulty (easy, medium and hard)<br>
 -3 timer choices (5, 7 and 10 minutes)<br>

@@ -1,3 +1,4 @@
+// SUDOKO
 // Making random board whenever called(needed)
 function makeRandomBoard(difficulty_level) {
     // This is one valid board
@@ -74,7 +75,7 @@ function swapCols(col1, col2) {
     let tmp_col1 = "";
     let tmp_col2 = "";
     for(let i = col1; i < 81; i = i + 9) {
-        
+
         tmp_col1 = tmp_col1 + final_board.substring(i, i+1);
     }
     for (let i = col2; i < 81; i = i + 9) {
