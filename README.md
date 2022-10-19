@@ -2,7 +2,7 @@
 
 Website: https://it-is-skywalkerl.github.io/Sudoku-Game/
 
-THIS IS A WEBSITE WHERE YOU CAN PLAY SUDOKO
+This is a website where you can play sudoku.
 
 <br>
 Features:
