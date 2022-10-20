@@ -75,16 +75,20 @@ function swapCols(col1, col2) {
     let tmp_col1 = "";
     let tmp_col2 = "";
     for(let i = col1; i < 81; i = i + 9) {
+        
         tmp_col1 = tmp_col1 + final_board.substring(i, i+1);
     }
     for (let i = col2; i < 81; i = i + 9) {
+
         tmp_col2 = tmp_col2 + final_board.substring(i, i+1);
     }
 
     for(let i = col1; i < 81; i = i + 9) {
+
         final_board = final_board.substring(0, i) + tmp_col2.substring(Math.floor(i/9), Math.floor(i/9) + 1) + final_board.substring(i + 1, 81);
     }
     for(let i = col2; i < 81; i = i + 9) {
+
         final_board = final_board.substring(0, i) + tmp_col1.substring(Math.floor(i/9), Math.floor(i/9) + 1) + final_board.substring(i + 1, 81);
     }
 }
