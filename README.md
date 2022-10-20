@@ -1,8 +1,8 @@
 # Sudoku-Game
 
-Website: https://it-is-skywalkerl.github.io/Sudoku-Game/
+This is a website where you can play Sudoku.
 
-This is a website where you can play SUDOKO.
+Website: https://it-is-skywalkerl.github.io/Sudoku-Game/
 
 <br>
 Features:
