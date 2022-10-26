@@ -27,6 +27,7 @@ function makeRandomBoard(difficulty_level) {
     swapCols(col1_to_be_swapped, col2_to_be_swapped);
 
     // Deleting some numbers based on difficulty
+    //difficulty level 1
     if(difficulty_level == 1) {
         for(let i = 0; i < 81; i++) {
             if(Math.random()>0.5) {
@@ -34,6 +35,7 @@ function makeRandomBoard(difficulty_level) {
             }
         }
     }
+    //difficulty level 2
     else if(difficulty_level == 2) {
         for(let i = 0; i < 81; i++) {
             if(Math.random()>0.42) {
@@ -41,6 +43,7 @@ function makeRandomBoard(difficulty_level) {
             }
         }
     }
+    // difficulty level 3
     else {
         for(let i = 0; i < 81; i++) {
             if(Math.random()>0.35) {
