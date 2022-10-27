@@ -16,11 +16,11 @@ header {
 
 body.dark {
   background-color: #000000;
-  color: rgb(236, 254, 255);
+  color: rgb(238, 254, 255);
 }
 
 header.dark {
-  background-color: rgb(1, 17, 62);
+  background-color: rgb(0, 16, 59);
 }
 
 
@@ -31,11 +31,11 @@ header.dark {
 }
 
 .fas {
-  font-size: 2.7vw;
+  font-size: 2.6vw;
 }
 
 #difficulty-colon {
-  font-size: 2.7vw;
+  font-size: 2.6vw;
   text-align: right;
 }
 
@@ -256,7 +256,7 @@ p.mightbecorrect {
   }
 
   #number-container > * {
-    border: 0.3vh solid rgb(167, 230, 255);
+    border: 0.3vh solid rgb(161, 228, 255);
     border-radius: 30%;
     display: flex;
     flex-wrap: wrap;
@@ -291,7 +291,7 @@ p.mightbecorrect {
   }
 
   .tileWhite {
-    border: 0.1vh solid rgb(221, 254, 255);
+    border: 0.1vh solid rgb(212, 248, 249);
     width: 8.1vw;
     height: 8.1vw;
     text-align: center;
@@ -325,7 +325,7 @@ p.mightbecorrect {
   }
 
   .leftBorderWhite {
-    border-left: 0.55vh solid rgb(221, 254, 255);
+    border-left: 0.56vh solid rgb(221, 254, 255);
   }
 
   .topBorderWhite {
