@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 body {
   background: #ffffff;
   font-family: "Baloo Tamma 2", cursive;
