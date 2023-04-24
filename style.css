@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
   background: #ffffff;
   font-family: "Baloo Tamma 2", cursive;
@@ -9,6 +10,7 @@ body {
   overflow-x: hidden;
   transition-duration: 1s;
 }
+
 
 header {
   background: #a7ffae;
