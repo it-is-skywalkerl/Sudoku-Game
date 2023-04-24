@@ -1,3 +1,5 @@
+// SUDOKO
+
 // Making random board whenever called(needed)
 function makeRandomBoard(difficulty_level) {
 
@@ -65,6 +67,7 @@ function swapRows(row1, row2) {
 
 // Function to swap 2 columns
 function swapCols(col1, col2) {
+
     // col1 to be smaller than col2 if not already
     if(col1 > col2) {
         col1 = col1 + col2;
@@ -75,7 +78,7 @@ function swapCols(col1, col2) {
     let tmp_col1 = "";
     let tmp_col2 = "";
     for(let i = col1; i < 81; i = i + 9) {
-        
+
         tmp_col1 = tmp_col1 + final_board.substring(i, i+1);
     }
     for (let i = col2; i < 81; i = i + 9) {
@@ -183,6 +186,7 @@ window.onload = function() {
 }
 
 function startGame() {
+
     //Choosing by board difficulty
     let board;
     
@@ -232,6 +236,7 @@ function startGame() {
 }
 
 function startTimer() {
+
     // Set remaining time
     if(id("time1").selected) time_remaining = 300;
     else if(id("time2").selected) time_remaining = 420;
@@ -269,6 +274,7 @@ function timeConversion(time) {
 }
 
 function generateBoard(board) {
+
     // Clearing any previous board
     clearPrev();
 
@@ -323,6 +329,7 @@ function generateBoard(board) {
 }
 
 function clearPrev() {
+
     // Removing each tile
     let tiles = qsa(".tile");
     for(let i = 0; i < tiles.length; i++)
