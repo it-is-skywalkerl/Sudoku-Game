@@ -11,7 +11,7 @@ body {
 }
 
 header {
-  background: #a7ffae;
+  background: #121834;
 }
 
 body.dark {
@@ -24,10 +24,9 @@ header.dark {
 }
 
 
-
-
 #sudoku-heading {
   font-size: 6vw;
+  color: white;
 }
 
 .fas {
@@ -37,9 +36,16 @@ header.dark {
 #difficulty-colon {
   font-size: 2.7vw;
   text-align: right;
+  color: white;
 }
 
-
+/* .logo{
+  display: block;
+  width: 10vw;
+  height: 20vh;
+  margin-left: auto;
+  margin-right: auto;
+} */
 
 
 #diff-dropdown {
@@ -52,6 +58,7 @@ header.dark {
 #time-colon {
   font-size: 2.6vw;
   text-align: right;
+  color: white;
 }
 
 #time-dropdown {
